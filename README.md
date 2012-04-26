@@ -26,6 +26,7 @@ Find a part by it's octopart ID.
 
 ```ruby
 Octopart::Part.find('39619421')
+# => <Octopart::Part>
 ```
 
 **#search**
@@ -34,8 +35,10 @@ Search all parts that match a given query string.
 
 ```ruby
 Octopart::Part.search('resistor')
+# => [<Octopart::Part>, ... ]
 
 Octopart::Part.search('resistor', limit: 10)
+# => [<Octopart::Part>, ... ]
 ```
 
 **#match**
@@ -44,6 +47,7 @@ Match (manufacturer name, mpn) to part uid.
 
 ```ruby
 Octopart::Part.match('texas instruments', 'SN74LS240N')
+# => 42315325996
 ```
 
 **#bom**
@@ -52,6 +56,7 @@ Return an array of parts that match the criteria
 
 ```ruby
 Octopart::Part.bom(mpn: 'SN74LS240N')
+# => [<Octopart::Part>, ... ]
 ```
 
 ## Contributing
