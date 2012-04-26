@@ -16,6 +16,9 @@ And then execute:
 
 ### Configuration
 
+In order to make more than 100 requests/hour you need to [register](http://octopart.com/api/signin?continue_to=http%3A//octopart.com/api/register)
+your application with Octopart and obtain your API key. Once you have your API key, you can set it like so.
+
 ```ruby
 Octopart.configure do |config|
   config.apikey = 'your api key'
@@ -23,6 +26,8 @@ end
 ```
 
 ### Parts
+
+* * *
 
 **#find**
 
@@ -39,6 +44,8 @@ part.mpn
 # => "H-46-6A"
 ```
 
+* * *
+
 **#search**
 
 Search all parts that match a given query string.
@@ -51,6 +58,8 @@ Octopart::Part.search('resistor', limit: 10)
 # => [<Octopart::Part >, ... ]
 ```
 
+* * *
+
 **#match**
 
 Match (manufacturer name, mpn) to part uid.
@@ -59,6 +68,8 @@ Match (manufacturer name, mpn) to part uid.
 Octopart::Part.match('texas instruments', 'SN74LS240N')
 # => 42315325996
 ```
+
+* * *
 
 **#bom**
 
