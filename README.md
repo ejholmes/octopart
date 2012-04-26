@@ -1,4 +1,4 @@
-# Octopart
+# Octopart [![travis-ci](https://secure.travis-ci.org/ejholmes/octopart.png)](https://secure.travis-ci.org/ejholmes/octopart)
 
 This is a ruby gem that wraps the [Octopart API](http://octopart.com/api/documentation).
 
