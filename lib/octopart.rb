@@ -1,5 +1,7 @@
-require "octopart/version"
+require 'hashie'
+require 'json'
+require 'rest-client'
 
-module Octopart
-  # Your code goes here...
-end
+require 'octopart/version'
+require 'octopart/base'
+require 'octopart/part'
