@@ -35,10 +35,7 @@ module Octopart
       def search(query, options = {})
         params = options.merge(q: query)
         response = JSON.parse(self.get('parts/search', params))
-        parts = []
-        response['results'].each do |part|
-          parts << part['item']
-        end
+        parts = response['results'].map { |part| part['item'] }
         self.build(parts)
       end
 
@@ -68,11 +65,7 @@ module Octopart
 
       def build(object)
         if object.is_a?(Array)
-          parts = []
-          object.each do |obj|
-            parts << self.build_single(obj)
-          end
-          parts
+          object.map { |obj| self.build_single(obj) }
         elsif object.is_a?(Hash)
           self.build_single(object)
         else
