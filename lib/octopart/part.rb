@@ -69,10 +69,17 @@ module Octopart
       end
 
       # Public: Matches a list of part numbers to an Array of Octopart::Part
-      def bom(options = nil)
-        options = [options] unless options.is_a?(Array)
-        lines = options.to_json
-        response = JSON.parse(self.get('bom/match', lines: lines))
+      #
+      # lines - Either a single line or an array of lines
+      #
+      # Examples
+      #
+      #   Octopart::Part.bom(mpn: 'SN74LS240N')
+      #
+      #   Octopart::Part.bom([{mpn: 'SN74LS240N'}, {mpn: 'ATMEGA328P-PU'}])
+      def bom(lines)
+        lines = [lines] unless lines.is_a?(Array)
+        response = JSON.parse(self.get('bom/match', lines: lines.to_json))
         parts = response['results'].first['items']
         self.build(parts)
       end
@@ -83,6 +90,7 @@ module Octopart
         if object.is_a?(Array)
           object.map { |obj| self.build(obj) }
         elsif object.is_a?(Hash)
+          object.delete('__class__')
           object = Hashie::Mash.new(object)
           self.new.tap { |p| p.replace(object) }
         else
