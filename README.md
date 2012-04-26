@@ -25,8 +25,14 @@ Or install it yourself as:
 Find a part by it's octopart ID.
 
 ```ruby
-Octopart::Part.find('39619421')
-# => <Octopart::Part>
+part = Octopart::Part.find('39619421')
+# => <Octopart::Part >
+
+part.short_description
+# => "Dial; Turns-Counting, Analog; 20 Turns; 100per Turn; Shaft Dia 0.25in"
+
+part.mpn
+# => "H-46-6A"
 ```
 
 **#search**
@@ -35,10 +41,10 @@ Search all parts that match a given query string.
 
 ```ruby
 Octopart::Part.search('resistor')
-# => [<Octopart::Part>, ... ]
+# => [<Octopart::Part >, ... ]
 
 Octopart::Part.search('resistor', limit: 10)
-# => [<Octopart::Part>, ... ]
+# => [<Octopart::Part >, ... ]
 ```
 
 **#match**
@@ -56,7 +62,7 @@ Return an array of parts that match the criteria
 
 ```ruby
 Octopart::Part.bom(mpn: 'SN74LS240N')
-# => [<Octopart::Part>, ... ]
+# => [<Octopart::Part >, ... ]
 ```
 
 ## Contributing
