@@ -25,7 +25,12 @@ describe Octopart::Part do
   end
 
   describe "#match" do
-    
+    context "when given a manufacturer and an mpn" do
+      use_vcr_cassette
+      subject { described_class.match('texas instruments', 'SN74LS240N') }
+
+      it { should eq(42315325996) }
+    end
   end
 
   describe "#bom" do

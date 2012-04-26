@@ -19,7 +19,12 @@ module Octopart
       end
 
       def match(manufacturer, mpn)
-        
+        params = { manufacturer_name: manufacturer, mpn: mpn }
+        response = JSON.parse(self.get('parts/match', params))
+        case response.length
+        when 1
+          response.first.first
+        end
       end
 
       def bom(options = nil)

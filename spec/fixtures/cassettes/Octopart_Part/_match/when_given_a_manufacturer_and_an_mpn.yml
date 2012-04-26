@@ -1,0 +1,54 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://octopart.com/api/v2/parts/match?manufacturer_name=texas+instruments&mpn=SN74LS240N
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      accept:
+      - ! '*/*; q=0.5, application/xml'
+      accept-encoding:
+      - gzip, deflate
+      user-agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: !binary |-
+        T0s=
+    headers:
+      !binary "Y2FjaGUtY29udHJvbA==":
+      - !binary |-
+        bm8tY2FjaGU=
+      !binary "Y29udGVudC1lbmNvZGluZw==":
+      - !binary |-
+        Z3ppcA==
+      !binary "Y29udGVudC10eXBl":
+      - !binary |-
+        dGV4dC9wbGFpbjsgY2hhcnNldD11dGYtOA==
+      !binary "ZGF0ZQ==":
+      - !binary |-
+        VGh1LCAyNiBBcHIgMjAxMiAwODo0MDo1OSBHTVQ=
+      !binary "cHJhZ21h":
+      - !binary |-
+        bm8tY2FjaGU=
+      !binary "eC1hcHAtdGltZQ==":
+      - !binary |-
+        MC4wMjc=
+      !binary "Y29udGVudC1sZW5ndGg=":
+      - !binary |-
+        Njk=
+      !binary "Y29ubmVjdGlvbg==":
+      - !binary |-
+        a2VlcC1hbGl2ZQ==
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA4uONjEyNjQ1NjK1tDTTUVAKSa1ILFbwzCsuKSrNTc0rKVYC
+        Cgb7mZv4BBuZGPgpxcYCAGJFasoyAAAA
+    http_version: !binary |-
+      MS4x
+  recorded_at: Thu, 26 Apr 2012 08:40:59 GMT
+recorded_with: VCR 2.1.1
