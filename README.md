@@ -76,11 +76,14 @@ Octopart::Part.match('texas instruments', 'SN74LS240N')
 
 **#bom**
 
-Return an array of parts that match the criteria
+Return an array of parts for each line specified.
 
 ```ruby
 Octopart::Part.bom(mpn: 'SN74LS240N')
-# => [<Octopart::Part >, ... ]
+# => [[<Octopart::Part >, ... ]]
+
+Octopart::Part.bom([{mpn: 'SN74LS240N'}, {mpn: 'ATMEGA328P-PU'}])
+# => [[<Octopart::Part >, ... ], [<Octopart::Part >, ... ]]
 ```
 
 ## Contributing

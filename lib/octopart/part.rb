@@ -80,8 +80,7 @@ module Octopart
       def bom(lines)
         lines = [lines] unless lines.is_a?(Array)
         response = JSON.parse(self.get('bom/match', lines: lines.to_json))
-        parts = response['results'].first['items']
-        self.build(parts)
+        response['results'].map { |line| self.build(line['items']) }
       end
 
       # Internal: Converts a Hash or an Array of Hash into an Octopart::Part or
