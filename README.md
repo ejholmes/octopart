@@ -18,7 +18,30 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+### Parts
+
+**#find**
+
+```ruby
+# Find a part by it's octopart ID
+Octopart::Part.find('39619421')
+```
+
+**#search**
+
+```ruby
+# Search all parts that match a given query string
+Octopart::Part.search('resistor')
+
+Octopart::Part.search('resistor', limit: 10)
+```
+
+**#match**
+
+```ruby
+# Match (manufacturer name, mpn) to part uid
+Octopart::Part.match('texas instruments', 'SN74LS240N')
+```
 
 ## Contributing
 
