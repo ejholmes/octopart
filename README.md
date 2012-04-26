@@ -1,6 +1,6 @@
 # Octopart
 
-TODO: Write a gem description
+This is a ruby gem that wraps the [Octopart API](http://octopart.com/api/documentation).
 
 ## Installation
 
@@ -17,6 +17,14 @@ Or install it yourself as:
     $ gem install octopart
 
 ## Usage
+
+### Configuration
+
+```ruby
+Octopart.configure do |config|
+  config.apikey = 'your api key'
+end
+```
 
 ### Parts
 
