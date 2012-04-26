@@ -5,13 +5,22 @@ module Octopart
 
       # Public: Find's a part for a given uid and returns an Octopart::Part
       #
-      # uid - An Octopart part id
+      # args - Either a single Octopart UID, or multiple
       #
       # Examples
       #
       #   part = Octopart::Part.find('39619421')
-      def find(uid)
-        response = JSON.parse(self.get('parts/get', uid: uid))
+      #
+      #   parts = Octopart::Part.find(39619421, 29035751, 31119928)
+      def find(*args)
+        case args.length
+        when 0
+          raise ArgumentError.new("Please specify atleast 1 uid")
+        when 1
+          response = JSON.parse(self.get('parts/get', uid: args.first))
+        else
+          response = JSON.parse(self.get('parts/get_multi', uids: args.to_json))
+        end
         self.build(response)
       end
 

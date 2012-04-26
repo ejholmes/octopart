@@ -34,7 +34,7 @@ end
 Find a part by it's octopart ID.
 
 ```ruby
-part = Octopart::Part.find('39619421')
+part = Octopart::Part.find(39619421)
 # => <Octopart::Part >
 
 part.short_description
@@ -42,6 +42,9 @@ part.short_description
 
 part.mpn
 # => "H-46-6A"
+
+parts = Octopart::Part.find(39619421, 29035751, 31119928)
+# => [<Octopart::Part >, ... ]
 ```
 
 * * *
