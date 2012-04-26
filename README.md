@@ -6,15 +6,11 @@ This is a ruby gem that wraps the [Octopart API](http://octopart.com/api/documen
 
 Add this line to your application's Gemfile:
 
-    gem 'octopart'
+    gem 'octopart', git: 'https://github.com/ejholmes/octopart.git'
 
 And then execute:
 
     $ bundle
-
-Or install it yourself as:
-
-    $ gem install octopart
 
 ## Usage
 
