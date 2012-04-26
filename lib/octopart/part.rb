@@ -77,13 +77,14 @@ module Octopart
         self.build(parts)
       end
 
-      # Internal
+      # Internal: Converts a Hash or an Array of Hash into an Octopart::Part or
+      # an Array of Octopart::Part
       def build(object)
         if object.is_a?(Array)
           object.map { |obj| self.build(obj) }
         elsif object.is_a?(Hash)
           object = Hashie::Mash.new(object)
-          part = self.new.tap { |p| p.replace(object) }
+          self.new.tap { |p| p.replace(object) }
         else
           raise "What is this? I don't even..."
         end
