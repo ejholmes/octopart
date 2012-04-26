@@ -19,7 +19,7 @@ $ bundle
 Or, install it manually:
 
 ```bash
-$ gem install 
+$ gem install octopart
 ```
 
 ## Usage
