@@ -80,20 +80,13 @@ module Octopart
       # Internal
       def build(object)
         if object.is_a?(Array)
-          object.map { |obj| self.build_single(obj) }
+          object.map { |obj| self.build(obj) }
         elsif object.is_a?(Hash)
-          self.build_single(object)
+          object = Hashie::Mash.new(object)
+          part = self.new.tap { |p| p.replace(object) }
         else
           raise "What is this? I don't even..."
         end
-      end
-
-      # Internal
-      def build_single(object)
-        object = Hashie::Mash.new(object)
-        part = self.new
-        part.replace(object)
-        part
       end
 
     end
