@@ -60,7 +60,11 @@ module Octopart
 
       # Public: Matches a list of part numbers to an Array of Octopart::Part
       def bom(options = nil)
-        
+        options = [options] unless options.is_a?(Array)
+        lines = options.to_json
+        response = JSON.parse(self.get('bom/match', lines: lines))
+        parts = response['results'].first['items']
+        self.build(parts)
       end
 
       # Internal
