@@ -3,7 +3,7 @@ module Octopart
 
     class << self
 
-      # Find's a part for a given uid and returns an Octopart::Part
+      # Public: Find's a part for a given uid and returns an Octopart::Part
       #
       # uid - An Octopart part id
       #
@@ -15,7 +15,7 @@ module Octopart
         self.build(response)
       end
 
-      # Search for parts that match the given query and returns an Array of 
+      # Public: Search for parts that match the given query and returns an Array of 
       # Octopart::Part
       #
       # query   - A search term
@@ -39,7 +39,7 @@ module Octopart
         self.build(parts)
       end
 
-      # Matches a manufacturer and manufacturer part number to an Octopart part UID
+      # Public: Matches a manufacturer and manufacturer part number to an Octopart part UID
       #
       # manufacturer - Manufacturer name (eg. Texas Instruments)
       # mpn          - Manufacturer part number
@@ -58,11 +58,12 @@ module Octopart
         end
       end
 
-      # Matches a list of part numbers to an Array of Octopart::Part
+      # Public: Matches a list of part numbers to an Array of Octopart::Part
       def bom(options = nil)
         
       end
 
+      # Internal
       def build(object)
         if object.is_a?(Array)
           object.map { |obj| self.build_single(obj) }
@@ -73,6 +74,7 @@ module Octopart
         end
       end
 
+      # Internal
       def build_single(object)
         object = Hashie::Mash.new(object)
         part = self.new
