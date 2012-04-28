@@ -111,5 +111,15 @@ module Octopart
       datasheets.first.url
     end
 
+    # Public: Returns the average price of the part in USD currency
+    #
+    # Examples
+    #
+    #   Octopart::Part.find(39619421).price
+    #   # => 16.455546153846154
+    def price
+      avg_price[0]
+    end
+
   end
 end

@@ -83,4 +83,11 @@ describe Octopart::Part do
       it { should be_nil }
     end
   end
+
+  describe ".price" do
+    use_vcr_cassette
+    subject { described_class.find(39619421).price }
+
+    it { should eq(16.455546153846154) }
+  end
 end
