@@ -121,7 +121,7 @@ module Octopart
       avg_price[0]
     end
 
-    # Public: Returns the offer with the cheapest price for the quantity
+    # Public: Returns the offer with the lowest price for the quantity
     # requested
     #
     # Examples
@@ -144,7 +144,7 @@ module Octopart
       offers.find { |offer| offer.sku == best[:sku] }
     end
 
-    # Public: Returns the the best price of the best offer for the quantity
+    # Public: Returns the the lowest price of the best offer for the quantity
     # requested
     #
     # Examples
