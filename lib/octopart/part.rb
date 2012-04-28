@@ -146,6 +146,17 @@ module Octopart
 
     # Public: Returns the the best price of the best offer for the quantity
     # requested
+    #
+    # Examples
+    #
+    #   part = Octopart::Part.find(39619421)
+    #   # => #<Octopart::Part >
+    #
+    #   part.best_price
+    #   # => 14.67
+    #
+    #   part.best_price(100)
+    #   # => 12.84
     def best_price(quantity = 1)
       best_offer.prices.reject { |p| p[0] > quantity }.last[1]
     end
