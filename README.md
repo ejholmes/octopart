@@ -55,8 +55,6 @@ part.mpn
 
 parts = Octopart::Part.find(39619421, 29035751, 31119928)
 # => [<Octopart::Part >, ... ]
-
-part.
 ```
 
 * * *
