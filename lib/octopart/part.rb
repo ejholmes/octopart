@@ -129,7 +129,7 @@ module Octopart
         p = offer.prices.select { |p| p[0] <= quantity }.last
         prices << { sku: offer.sku, price: p[1] } if p
       end
-      best = prices.max_by { |p| p[:price] }
+      best = prices.min_by { |p| p[:price] }
       offers.find { |offer| offer.sku == best[:sku] }
     end
 

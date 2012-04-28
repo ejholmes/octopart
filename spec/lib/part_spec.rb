@@ -96,7 +96,14 @@ describe Octopart::Part do
       use_vcr_cassette
       subject { described_class.find(39619421).best_offer.sku }
 
-      it { should eq('1693062') }
+      it { should eq('H466A') }
+    end
+
+    context "for a quantity of 100" do
+      use_vcr_cassette
+      subject { described_class.find(39619421).best_offer.sku }
+
+      it { should eq('H466A') }
     end
   end
 end
