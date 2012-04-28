@@ -4,7 +4,7 @@ module Octopart
     class << self
 
       # Public: Finds a part for a given uid and returns an Octopart::Part or
-      # an Array of Octopart::Part if multipled UIDs are given.
+      # an Array of Octopart::Part if multiple UIDs are given.
       #
       # args - Either a single Octopart UID, or multiple
       #
