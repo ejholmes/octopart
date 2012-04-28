@@ -1,0 +1,69 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://octopart.com/api/v2/parts/get?uid=2042793624385
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      accept:
+      - ! '*/*; q=0.5, application/xml'
+      accept-encoding:
+      - gzip, deflate
+      user-agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: !binary |-
+        T0s=
+    headers:
+      !binary "Y2FjaGUtY29udHJvbA==":
+      - !binary |-
+        bm8tY2FjaGU=
+      !binary "Y29udGVudC1lbmNvZGluZw==":
+      - !binary |-
+        Z3ppcA==
+      !binary "Y29udGVudC10eXBl":
+      - !binary |-
+        dGV4dC9wbGFpbjsgY2hhcnNldD11dGYtOA==
+      !binary "ZGF0ZQ==":
+      - !binary |-
+        U2F0LCAyOCBBcHIgMjAxMiAyMjowNjozNyBHTVQ=
+      !binary "cHJhZ21h":
+      - !binary |-
+        bm8tY2FjaGU=
+      !binary "eC1hcHAtdGltZQ==":
+      - !binary |-
+        MC4wMTQ=
+      !binary "Y29udGVudC1sZW5ndGg=":
+      - !binary |-
+        NzU3
+      !binary "Y29ubmVjdGlvbg==":
+      - !binary |-
+        a2VlcC1hbGl2ZQ==
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA71V227aQBD9FctS3wr4Do5UVSFpeklDWqIqqlBlLfZib3zb
+        7q4hFPHvnVlMAlQttA/1kz2eOTM7c+bsykyojAXjitWVNM+MycpU9FHBmzl+
+        c2c4XevauH13Y9g9797wXxgX5+Ph7ci4ev/xxnxpmLGgCVNRUpeEVRiUsJTl
+        dNmN63LnfyMK/Jkpxc96vTpWNSdCdeKCxblE355+7c25EiTOX885S165YeC6
+        Xj80198gk6AzKiKWAE7VFAVYGv3hWJ7TD93A8dyBD9aS6zoursYdx/8w7PiO
+        c42VsJKktD0hlBOFFn/cqUmytCTdbWW6pNBybT9wezqy9xXC684ebPeBpwiN
+        cO6JcNZJcCcU5ofHkf7LdNoG+P5p/XSOl637eSKcfQROcydbcioKVuU4/9Ua
+        Ko6iuCBSRhF2+hNwEedYNWUkG84LRgV62mCTWS2A389LggFjKnEzcuM2K3Ez
+        FnoziJjWlXHFCs38hCgiM0qV5hwyuJ4Bg1sGyrxBIFyvz8PrzugS85M5Ybgn
+        ge+7OjetEjH7HkE/wNqyngsWb3g8AbpbXSsYWHsPLsGXu0sTUk5sS7v4g3Dv
+        6e+4ONbGx/HsPZ9wxydofWyvvxtqQ16Nb1uDYC94J9bfOln9/i4mBm+irWAP
+        1XmO8EN8f368A9w23veezox91lKiMlE3adb27l+VB9C2hIAJrMysLikHITiA
+        XSwW3QPhS5jkBVlWpKQ46EuQxc41XeKY97g3FKRK0KrFzPNDZCeTEWkUMI/9
+        oCh4SjR0Y56KOqeguWCckUKilYNgkpRVKdhajkybZVUvDorcattfqW5MFE1r
+        sQThfeIxmaeRZiEknAAB/8AusyQipyqSiqgGAcz78/Ho/ejtmXHDHmlinCPl
+        yZQVTOne4Ari0bddxxhchYQqcPzNiTYXyEyA4D9MUfDzzlKr9fZuwP5KTuOn
+        I5SkamYkVo2gAjL8Mti2jwdD1FfAkQkGjr1e/wQuebR5VgcAAA==
+    http_version: !binary |-
+      MS4x
+  recorded_at: Sat, 28 Apr 2012 22:06:37 GMT
+recorded_with: VCR 2.1.1

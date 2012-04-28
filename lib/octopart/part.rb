@@ -92,5 +92,17 @@ module Octopart
 
     end
 
+    # Public: Returns the datasheet with the highest score, or nil of no
+    # datasheets
+    #
+    # Examples
+    #   
+    #   Octopart::Part.find(39619421).datasheet
+    #   # => http://datasheet.octopart.com/H-46-6A-Bourns-datasheet-12570.pdf
+    def datasheet
+      return nil unless datasheets.length > 0
+      datasheets.first.url
+    end
+
   end
 end

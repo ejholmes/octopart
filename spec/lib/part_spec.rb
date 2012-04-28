@@ -62,4 +62,20 @@ describe Octopart::Part do
       end
     end
   end
+
+  describe ".datasheet" do
+    context "when a part has datasheets" do
+      use_vcr_cassette
+      subject { described_class.find(39619421).datasheet }
+
+      it { should eq('http://datasheet.octopart.com/H-46-6A-Bourns-datasheet-12570.pdf') }
+    end
+
+    context "when a part doesn't have any datasheets" do
+      use_vcr_cassette
+      subject { described_class.find(2042793624385).datasheet }
+
+      it { should be_nil }
+    end
+  end
 end
