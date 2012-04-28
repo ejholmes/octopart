@@ -123,6 +123,17 @@ module Octopart
 
     # Public: Returns the offer with the cheapest price for the quantity
     # requested
+    #
+    # Examples
+    #
+    #   part = Octopart::Part.find(39619421)
+    #   # => #<Octopart::Part >
+    #
+    #   part.best_offer
+    #   # => #<Hashie::Mash >
+    #
+    #   part.best_offer.prices
+    #   # => [[1, 14.67, "USD"], [10, 13.69, "USD"], [30, 12.84, "USD"]]
     def best_offer(quantity = 1)
       prices = []
       offers.each do |offer|
@@ -131,6 +142,12 @@ module Octopart
       end
       best = prices.min_by { |p| p[:price] }
       offers.find { |offer| offer.sku == best[:sku] }
+    end
+
+    # Public: Returns the the best price of the best offer for the quantity
+    # requested
+    def best_price(quantity = 1)
+      best_offer.prices.reject { |p| p[0] > quantity }.last[1]
     end
 
   end
