@@ -121,5 +121,17 @@ module Octopart
       avg_price[0]
     end
 
+    # Public: Returns the offer with the cheapest price for the quantity
+    # requested
+    def best_offer(quantity = 1)
+      prices = []
+      offers.each do |offer|
+        p = offer.prices.select { |p| p[0] <= quantity }.last
+        prices << { sku: offer.sku, price: p[1] } if p
+      end
+      best = prices.max_by { |p| p[:price] }
+      offers.find { |offer| offer.sku == best[:sku] }
+    end
+
   end
 end

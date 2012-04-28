@@ -90,4 +90,13 @@ describe Octopart::Part do
 
     it { should eq(16.455546153846154) }
   end
+  
+  describe ".best_offer" do
+    context "for a quantity of 1" do
+      use_vcr_cassette
+      subject { described_class.find(39619421).best_offer.sku }
+
+      it { should eq('1693062') }
+    end
+  end
 end
