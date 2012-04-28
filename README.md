@@ -128,6 +128,21 @@ part.best_offer.prices
 # => [[1, 14.67, "USD"], [10, 13.69, "USD"], [30, 12.84, "USD"]]
 ```
 
+* * *
+
+**.best_price**
+
+```ruby
+part = Octopart::Part.find(39619421)
+# => #<Octopart::Part >
+
+part.best_price
+# => 14.67
+
+part.best_price(100)
+# => 12.84
+```
+
 ## Contributing
 
 1. Fork it
