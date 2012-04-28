@@ -1,4 +1,4 @@
-# Octopart
+# Octopart [![travis-ci](https://secure.travis-ci.org/ejholmes/octopart.png)](https://secure.travis-ci.org/ejholmes/octopart)
 
 This is a ruby gem that wraps the [Octopart API](http://octopart.com/api/documentation).
 
@@ -6,11 +6,21 @@ This is a ruby gem that wraps the [Octopart API](http://octopart.com/api/documen
 
 Add this line to your application's Gemfile:
 
-    gem 'octopart', git: 'https://github.com/ejholmes/octopart.git'
+```ruby
+gem 'octopart'
+```
 
 And then execute:
 
-    $ bundle
+```bash
+$ bundle
+```
+
+Or, install it manually:
+
+```bash
+$ gem install octopart
+```
 
 ## Usage
 
@@ -76,11 +86,14 @@ Octopart::Part.match('texas instruments', 'SN74LS240N')
 
 **#bom**
 
-Return an array of parts that match the criteria
+Return an array of parts for each line specified.
 
 ```ruby
 Octopart::Part.bom(mpn: 'SN74LS240N')
-# => [<Octopart::Part >, ... ]
+# => [[<Octopart::Part >, ... ]]
+
+Octopart::Part.bom([{mpn: 'SN74LS240N'}, {mpn: 'ATMEGA328P-PU'}])
+# => [[<Octopart::Part >, ... ], [<Octopart::Part >, ... ]]
 ```
 
 ## Contributing

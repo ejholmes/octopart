@@ -57,8 +57,13 @@ describe Octopart::Part do
       subject { described_class.bom(mpn: 'SN74LS240N') }
 
       it { should be_a(Array) }
-      it "each object in the array should be a part" do
-        subject.each { |part| part.should be_a(Octopart::Part) }
+      it "each object in the array should be an array part" do
+        subject.each do |line|
+          line.should be_a(Array)
+          line.each do |part|
+            part.should be_a(Octopart::Part)
+          end
+        end
       end
     end
   end
