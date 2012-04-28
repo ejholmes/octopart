@@ -55,6 +55,8 @@ part.mpn
 
 parts = Octopart::Part.find(39619421, 29035751, 31119928)
 # => [<Octopart::Part >, ... ]
+
+part.
 ```
 
 * * *
@@ -94,6 +96,35 @@ Octopart::Part.bom(mpn: 'SN74LS240N')
 
 Octopart::Part.bom([{mpn: 'SN74LS240N'}, {mpn: 'ATMEGA328P-PU'}])
 # => [[<Octopart::Part >, ... ], [<Octopart::Part >, ... ]]
+```
+
+* * *
+
+**.datasheet**
+
+Returns the highest rated datasheet for the part, or nil if there are no
+datasheets.
+
+```ruby
+part = Octopart::Part.find(39619421)
+# => <Octopart::Part >
+
+part.datasheet
+# => http://datasheet.octopart.com/H-46-6A-Bourns-datasheet-12570.pdf
+```
+
+* * *
+
+Returns the best offer (lowest price) for the quantity specified.
+
+**.best_offer**
+
+```ruby
+part = Octopart::Part.find(39619421)
+# => <Octopart::Part >
+
+part.best_offer
+# => #<Hashie::Mash >
 ```
 
 ## Contributing
