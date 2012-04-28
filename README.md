@@ -113,9 +113,9 @@ part.datasheet
 
 * * *
 
-Returns the best offer (lowest price) for the quantity specified.
-
 **.best_offer**
+
+Returns the best offer (lowest price) for the quantity specified.
 
 ```ruby
 part = Octopart::Part.find(39619421)
@@ -129,6 +129,8 @@ part.best_offer.prices
 ```
 
 * * *
+
+Returns the best price (lowest price) for the quantity specified.
 
 **.best_price**
 
