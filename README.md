@@ -123,6 +123,9 @@ part = Octopart::Part.find(39619421)
 
 part.best_offer
 # => #<Hashie::Mash >
+
+part.best_offer.prices
+# => [[1, 14.67, "USD"], [10, 13.69, "USD"], [30, 12.84, "USD"]]
 ```
 
 ## Contributing
