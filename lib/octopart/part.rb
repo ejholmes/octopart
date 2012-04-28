@@ -115,9 +115,9 @@ module Octopart
     #
     # Examples
     #
-    #   Octopart::Part.find(39619421).price
+    #   Octopart::Part.find(39619421).average_price
     #   # => 16.455546153846154
-    def price
+    def average_price
       avg_price[0]
     end
 

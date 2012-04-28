@@ -86,7 +86,7 @@ describe Octopart::Part do
 
   describe ".price" do
     use_vcr_cassette
-    subject { described_class.find(39619421).price }
+    subject { described_class.find(39619421).average_price }
 
     it { should eq(16.455546153846154) }
   end
