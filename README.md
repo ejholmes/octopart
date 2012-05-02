@@ -73,6 +73,18 @@ Octopart::Part.search('resistor', limit: 10)
 
 * * *
 
+**#suggest**
+
+Suggest a search term. Can be used for autocomplete, although, you'd be better
+off doing autocomplete client side using JavaScript.
+
+```ruby
+Octopart::Part.suggest('sn728')
+# => ["SN72811", "SN72811N", "SN72810N", "SN72820N", "SN72810"]
+```
+
+* * *
+
 **#match**
 
 Match (manufacturer name, mpn) to part uid.
