@@ -42,6 +42,18 @@ describe Octopart::Part do
     end
   end
 
+  describe "#suggest" do
+    context "when given a search term" do
+      use_vcr_cassette
+      subject { described_class.suggest('sn74f') }
+
+      it { should be_a(Array) }
+      it "each object in the array should be a string" do
+        subject.each { |suggestion| suggestion.should be_a(String) }
+      end
+    end
+  end
+
   describe "#match" do
     context "when given a manufacturer and an mpn" do
       use_vcr_cassette

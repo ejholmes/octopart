@@ -49,6 +49,22 @@ module Octopart
         self.build(parts)
       end
 
+      # Public: Suggest a search term. Can be used for autocomplete
+      #
+      # term    - A term to make suggestions for
+      # options - A set of options (default: {})
+      #           :limit - Number of results to return.
+      #
+      # Examples
+      #   
+      #   Octopart::Part.suggest('sn728')
+      #   # => ["SN72811", "SN72811N", "SN72810N", "SN72820N", "SN72810"]
+      def suggest(term, options = {})
+        params = options.merge(q: term)
+        response = JSON.parse(self.get('parts/suggest', params))
+        response['results']
+      end
+
       # Public: Matches a manufacturer and manufacturer part number to an Octopart part UID
       #
       # manufacturer - Manufacturer name (eg. Texas Instruments)
